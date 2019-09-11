@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from "react"
 import axios from 'axios'
+import Header from './components/Header'
+import Image from './components/Image'
+//import Input from './components/Input'
 import "./App.css"
 
 function App() {
@@ -8,13 +11,14 @@ function App() {
   const [data, setData] = useState({})
 
   useEffect(()=>{
-    /*
-    axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
-        .then(resp=>{
-            //console.log(resp)
-            setData(resp.data)
-        })
-    */
+    // commented out to prevent API over-usage
+    // axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+    //     .then(resp=>{
+    //         //console.log(resp)
+    //         setData(resp.data)
+    //     })
+
+    // temporary manual response
     setData({
         copyright: "Bray Falls",
         date: "2019-09-11",
@@ -25,13 +29,14 @@ function App() {
         title: "IC 1805: The Heart Nebula",
         url: "https://apod.nasa.gov/apod/image/1909/HeartNebula_Falls_960.jpg",
     })
+
   },[])
+  
   return (
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <Header />
+      <Image src={data.url} alt={data.title} />
+      <p>Read through the instructions in the README.md file to build your NASA app! Have fun 🚀!</p>
     </div>
   );
 }
