@@ -3,20 +3,24 @@ import axios from 'axios'
 import Header from './components/Header'
 import Image from './components/Image'
 import Info from './components/Info'
-//import Input from './components/Input'
+import Input from './components/Input'
 import "./App.css"
 
 function App() {
 
   // var
   const [data, setData] = useState({})
+  const [date, setDate] = useState('')
 
   useEffect(()=>{
     // commented out to prevent API over-usage
-    // axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY`)
+    // axios.get(`https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY${date?`&date=${date}`:''}`)
     //     .then(resp=>{
     //         //console.log(resp)
     //         setData(resp.data)
+    //     })
+    //     .catch(err=>{
+    //         console.error(err)
     //     })
 
     // temporary manual response
@@ -31,7 +35,7 @@ function App() {
         url: "https://apod.nasa.gov/apod/image/1909/HeartNebula_Falls_960.jpg",
     })
 
-  },[])
+  },[date])
   
   return (
     <div className="App">
@@ -40,6 +44,7 @@ function App() {
         <Image src={data.url} alt={data.title} hdurl={data.hdurl} />
         <Info title={data.title} copyright={data.copyright} explanation={data.explanation} />
       </div>
+      <Input date={data.date} handler={setDate} />
     </div>
   );
 }
