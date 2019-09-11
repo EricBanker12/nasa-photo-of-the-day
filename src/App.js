@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react"
 import axios from 'axios'
 import Header from './components/Header'
 import Image from './components/Image'
+import Info from './components/Info'
 //import Input from './components/Input'
 import "./App.css"
 
@@ -35,8 +36,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Image src={data.url} alt={data.title} />
-      <p>Read through the instructions in the README.md file to build your NASA app! Have fun 🚀!</p>
+      <div>
+        <Image src={data.url} alt={data.title} hdurl={data.hdurl} />
+        <Info title={data.title} copyright={data.copyright} explanation={data.explanation} />
+      </div>
     </div>
   );
 }
