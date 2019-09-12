@@ -10,10 +10,26 @@ import "./App.css"
 const Container = styled.div`
     min-height: 100vh;
     background-color: #282c34;
-    color: white;
+    color: rgba(255,255,255,0.8);
     line-height: 1.5;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     text-shadow: 0 0 12px black;
+
+    header, section {
+        width 70%;
+        margin 0 auto;
+        @media (max-width:800px) {
+            width: 90%;
+        }
+    }
+
+    a {
+        color: rgba(255,255,255,0.8);
+        text-decoration: none;
+        &:hover {
+            text-decoration:underline;
+        }
+    }
 `
 
 function App() {
@@ -53,9 +69,9 @@ function App() {
         <Header />
         <section>
           <Input date={data.date} handler={setDate} />
-          <Info title={data.title} copyright={data.copyright} explanation={data.explanation} />
+          <Info title={data.title} copyright={data.copyright} explanation={data.explanation} hdurl={data.hdurl} />
         </section>
-        <Image src={data.url} alt={data.title} hdurl={data.hdurl} />
+        <Image src={data.url} alt={data.title} />
       </Container>
     </div>
   );
