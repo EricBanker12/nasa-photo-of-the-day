@@ -8,7 +8,6 @@ const InputDate = styled.input.attrs({
     max: today
 })`
     margin: 1em;
-    color: #282c34;
     background-color: white;
     font-size: 1.25rem;
     border: 1px solid black;

@@ -14,7 +14,7 @@ export default function Info(props) {
     return (
         <div>
             <H2>{props.title}</H2>
-            <p>HD Image: <a href={props.hdurl}>link</a></p>
+            {props.hdurl ? <p>HD Image: <a href={props.hdurl}>link</a></p>:''}
             {props.copyright ? <p>Copyright: {props.copyright}</p>:''}
             <p>{props.explanation}</p>
         </div>
