@@ -11,6 +11,9 @@ const Container = styled.div`
     min-height: 100vh;
     background-color: #282c34;
     color: white;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    text-shadow: 0 0 12px black;
 `
 
 function App() {

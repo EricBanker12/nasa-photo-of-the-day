@@ -1,8 +1,18 @@
 import React, {useState, useEffect} from 'react'
+import styled from 'styled-components'
+
+const today = new Date().toISOString().replace(/T.+/,'')
+
+const InputDate = styled.input.attrs({
+    type: 'date',
+    max: today
+})`
+    color: #282c34;
+    font-size: 1.5rem;
+    border: none;
+`
 
 export default function Input(props) {
-
-    const [today] = useState(new Date().toISOString().replace(/T.+/,''))
 
     useEffect(()=>{
         const input = document.querySelector('input')
@@ -22,8 +32,8 @@ export default function Input(props) {
 
     return (
         <div>
-            <span>Astronomy Picture of the Day: </span>
-            <input type="date" max={today} />
+            <span>Date: </span>
+            <InputDate />
         </div>
     )
 }
