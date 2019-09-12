@@ -9,9 +9,10 @@ const InputDate = styled.input.attrs({
 })`
     margin: 1em;
     color: #282c34;
-    background-color: rgba(255,255,255,0.8);
+    background-color: white;
     font-size: 1.25rem;
-    border: none;
+    border: 1px solid black;
+    box-shadow: 0 0 12px black;
 `
 
 export default function Input(props) {

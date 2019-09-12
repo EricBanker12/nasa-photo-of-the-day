@@ -8,14 +8,22 @@ import Input from './components/Input'
 import "./App.css"
 
 const Container = styled.div`
+    overflow: hidden;
     min-height: 100vh;
     background-color: #282c34;
-    color: rgba(255,255,255,0.8);
+    color: white;
     line-height: 1.5;
     font-size: 1.25rem;
-    text-shadow: 0 0 12px black;
+    text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black,
+        0 0 12px black;
 
     header, section {
+        position:relative;
+        z-index: 2;
         width 70%;
         margin 0 auto;
         @media (max-width:800px) {
@@ -24,7 +32,7 @@ const Container = styled.div`
     }
 
     a {
-        color: rgba(255,255,255,0.8);
+        color: white;
         text-decoration: none;
         &:hover {
             text-decoration:underline;
